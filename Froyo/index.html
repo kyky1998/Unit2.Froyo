@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Froyo</title>
+    <link rel="stylesheet" href="index.js">
+</head>
+<body>
+    <h2>
+        Open Dev Tools to view browser console
+    </h2>
+    <script>
+      
+        window.onload = function() {
+            
+            let input = prompt("Enter a list of froyo flavors, separated by commas:");
+
+            
+            if (input) {
+               
+                let flavorsArray = input.split(",").map(flavor => flavor.trim());
+
+               
+                let flavorCounts = {};
+
+               
+                flavorsArray.forEach(flavor => {
+                    if (flavorCounts[flavor]) {
+                        flavorCounts[flavor] += 1;
+                    } else {
+                        flavorCounts[flavor] = 1;
+                    }
+                });
+
+               
+                console.table(flavorCounts);
+            } else {
+               
+                console.log("No flavors were entered.");
+            }
+        };
+    </script>
+
+    
+    
+    
+</body>
+</html>
